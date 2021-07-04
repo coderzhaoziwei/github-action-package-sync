@@ -1,0 +1,18 @@
+name: sync-package
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - uses: coderzhaoziwei/github-action-package-sync@main
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+        DESCRIPTION=`jq -r '.description' package.json`
+        WEBSITE=`jq -r '.homepage' package.json`
+        TOPICS=`jq '.keywords' package.json`

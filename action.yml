@@ -1,0 +1,22 @@
+name: package sync
+description: Synchronize description/homepage/keywords fields in package.json file to repo details.
+author: cz
+branding:
+  icon: upload-cloud
+  color: green
+inputs:
+  GITHUB_TOKEN:
+    description: Personal access token with Repo privileges
+    required: true
+  USERNAME:
+    description: Username to use for Git
+    required: false
+    default: github-actions[bot]
+  EMAIL:
+    description: Email to use for Git
+    required: false
+    default: 41898282+github-actions[bot]@users.noreply.github.com
+
+runs:
+  using: docker
+  image: Dockerfile

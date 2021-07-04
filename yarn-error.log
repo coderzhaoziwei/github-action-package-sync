@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/local/Cellar/node/15.6.0/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js init
+
+PATH: 
+  /Users/coderzhao/.rvm/gems/ruby-2.7.2/bin:/Users/coderzhao/.rvm/gems/ruby-2.7.2@global/bin:/Users/coderzhao/.rvm/rubies/ruby-2.7.2/bin:/Users/coderzhao/.deno/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/coderzhao/.rvm/gems/ruby-2.7.2/bin:/Users/coderzhao/.rvm/gems/ruby-2.7.2@global/bin:/Users/coderzhao/.rvm/rubies/ruby-2.7.2/bin:/Users/coderzhao/.deno/bin:/usr/local/sbin:/Users/coderzhao/.rvm/bin:/Users/coderzhao/.rvm/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/coderzhao/Documents/GitHub/github-action-package-sync/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

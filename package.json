@@ -1,0 +1,8 @@
+{
+  "description": "Synchronize description/homepage/keywords fields in package.json file to repo details.",
+  "homepage": "https://coderzhaoziwei.github.io",
+  "keywords": [
+    "keyword-1",
+    "keyword-2"
+  ]
+}
