@@ -19,11 +19,8 @@ jobs:
           USERNAME=${REPO_INFO[0]}
           DESCRIPTION=`jq -r '.description' package.json`
           echo "$DESCRIPTION"
-          echo "${{ secrets }}"
-          echo "${{ secrets.GITHUB_ACCESS_TOKEN }}"
           curl \
             -X PATCH \
-            -u username:token
             -H "Accept: application/vnd.github.v3+json" \
             -u coderzhaoziwei:${{ secrets.GITHUB_ACCESS_TOKEN }} \
             ${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY} \
