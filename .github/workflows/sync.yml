@@ -21,12 +21,10 @@ jobs:
           WEBSITE=`jq -r ".homepage" package.json`
           TOPICS=`jq ".keywords" package.json`
           echo "$DESCRIPTION"
-          jq -n --arg description "$DESCRIPTION" "{description:$description}"
-          jq -n --arg homepage "$WEBSITE" '{homepage:$homepage}'
-          jq -n --arg homepage "$WEBSITE" '{homepage:$homepage}' | curl -d @- \
+          curl --silent
+            -d 'description=$DESCRIPTION'
             -X PATCH \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Content-Type: application/json" \
             -u ${USERNAME}:${{ secrets.GITHUB_TOKEN }} \
-            --silent \
             ${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}
