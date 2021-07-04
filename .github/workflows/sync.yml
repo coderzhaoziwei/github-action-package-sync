@@ -9,15 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo ${{ github.api.url }}
-      # - uses: coderzhaoziwei/github-action-package-sync@main
-      #   with:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo ${{ github.api }}
       - name: run
         run: |
           curl --request PATCH \
           --header "Accept: application/vnd.github.v3+json" \
-          --user ${{ github.repository_owner }}:${{ github.token }} \
+          --user ${{ github.repository_owner }}:${{ secrets.PAT_REPO }} \
           https://api.github.com/repos/${{ github.repository }} \
           --data '{ "description": "This is a description." }'
 
