@@ -15,4 +15,4 @@ jobs:
       - name: run
         run: |
           DESCRIPTION=`jq -r '.description' package.json`
-          echo DESCRIPTION
+          echo "$DESCRIPTION"
