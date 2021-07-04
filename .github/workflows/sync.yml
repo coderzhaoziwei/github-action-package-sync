@@ -12,7 +12,4 @@ jobs:
       # - uses: coderzhaoziwei/github-action-package-sync@main
       #   with:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
-        DESCRIPTION=`jq -r '.description' package.json`
-        WEBSITE=`jq -r '.homepage' package.json`
-        TOPICS=`jq '.keywords' package.json`
+      - run: DESCRIPTION=`jq -r '.description' package.json`
