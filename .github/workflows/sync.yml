@@ -5,12 +5,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  github-pages:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       # - uses: coderzhaoziwei/github-action-package-sync@main
       #   with:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: jq -r '.description' package.json
       - run: DESCRIPTION=`jq -r '.description' package.json`
       - run: echo "$DESCRIPTION"
