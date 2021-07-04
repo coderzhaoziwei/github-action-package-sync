@@ -18,14 +18,14 @@ jobs:
           echo ${REPO_INFO}
           USERNAME=${REPO_INFO[0]}
           DESCRIPTION=`jq -r '.description' package.json`
-          WEBSITE=`jq -r ".homepage" package.json`
-          TOPICS=`jq ".keywords" package.json`
           echo "$DESCRIPTION"
           curl \
-            -d 'description=$DESCRIPTION' \
             -X PATCH \
             -H "Accept: application/vnd.github.v3+json" \
-            -H "Content-Type: application/json" \
             -u ${USERNAME}:${{ secrets.GITHUB_TOKEN }} \
-            --silent \
-            ${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}
+            ${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY} \
+            -d '{"description":"$DESCRIPTION"}' \
+
+
+# WEBSITE=`jq -r ".homepage" package.json`
+# TOPICS=`jq ".keywords" package.json`
