@@ -14,4 +14,4 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: jq -r '.description' package.json
       - run: DESCRIPTION=`jq -r '.description' package.json`
-      - run: echo "$DESCRIPTION"
+      - run: echo $DESCRIPTION
