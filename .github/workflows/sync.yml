@@ -1,9 +1,5 @@
 name: sync-package
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
+on: push
 jobs:
   test:
     runs-on: ubuntu-latest
